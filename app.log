@@ -1,0 +1,1317 @@
+STORAGE :: DEBUG – [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8090
+ * Running on http://192.168.0.57:8090
+STORAGE :: DEBUG – [33mPress CTRL+C to quit[0m
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:06:04] "[33mGET / HTTP/1.1[0m" 404 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:06:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:06:50] "[32mGET /ui HTTP/1.1[0m" 308 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:06:50] "GET /ui/ HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:06:50] "GET /ui/swagger-ui.css HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:06:50] "GET /ui/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:06:50] "GET /ui/swagger-ui-bundle.js HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:06:51] "GET /openapi.json HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:06:51] "GET /ui/favicon-32x32.png HTTP/1.1" 200 -
+STORAGE :: DEBUG – Exception on /buy [POST]
+Traceback (most recent call last):
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 747, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: buy
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\decorator.py", line 68, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\uri_parsing.py", line 149, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\validation.py", line 196, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\response.py", line 112, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\parameter.py", line 120, in wrapper
+    return function(**kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "c:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\app.py", line 129, in buy
+    session.commit()
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1903, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1218, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1193, in _prepare_impl
+    self.session.flush()
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4153, in flush
+    self._flush(objects)
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4289, in _flush
+    with util.safe_reraise():
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 147, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4250, in _flush
+    flush_context.execute()
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 467, in execute
+    rec.execute(self)
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 644, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1188, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1414, in execute
+    return meth(
+           ^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 485, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2325, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 747, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: buy
+[SQL: INSERT INTO buy (buy_id, item_name, item_price, buy_qty, trace_id, date_created) VALUES (?, ?, ?, ?, ?, ?)]
+[parameters: ('d290f1ee-6c54-4b01-90e6-d701748f0851', 'Item 1', 19.99, 1, 'd290f1ee-6c54-4b01-90e6-d701748f0851', datetime.datetime(2023, 2, 25, 19, 6, 59, 381468))]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:06:59] "[35m[1mPOST /buy HTTP/1.1[0m" 500 -
+STORAGE :: DEBUG – Exception on /buy [POST]
+Traceback (most recent call last):
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 747, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: buy
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\decorator.py", line 68, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\uri_parsing.py", line 149, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\validation.py", line 196, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\response.py", line 112, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\parameter.py", line 120, in wrapper
+    return function(**kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "c:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\app.py", line 129, in buy
+    session.commit()
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1903, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1218, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1193, in _prepare_impl
+    self.session.flush()
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4153, in flush
+    self._flush(objects)
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4289, in _flush
+    with util.safe_reraise():
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 147, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4250, in _flush
+    flush_context.execute()
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 467, in execute
+    rec.execute(self)
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 644, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1188, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1414, in execute
+    return meth(
+           ^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 485, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2325, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 747, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: buy
+[SQL: INSERT INTO buy (buy_id, item_name, item_price, buy_qty, trace_id, date_created) VALUES (?, ?, ?, ?, ?, ?)]
+[parameters: ('d290f1ee-6c54-4b01-90e6-d701748f0851', 'Item 1', 19.99, 1, 'd290f1ee-6c54-4b01-90e6-d701748f0851', datetime.datetime(2023, 2, 25, 19, 7, 0, 742298))]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:07:00] "[35m[1mPOST /buy HTTP/1.1[0m" 500 -
+STORAGE :: DEBUG – [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8090
+ * Running on http://192.168.0.57:8090
+STORAGE :: DEBUG – [33mPress CTRL+C to quit[0m
+STORAGE :: DEBUG – Stored buy event: {'buy_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851', 'buy_qty': 1, 'item_name': 'Item 1', 'item_price': 19.99, 'trace_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851'}
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:19:34] "[35m[1mPOST /buy HTTP/1.1[0m" 201 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:19:43] "[35m[1mPOST /sell HTTP/1.1[0m" 201 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:19:46] "[35m[1mPOST /sell HTTP/1.1[0m" 201 -
+STORAGE :: DEBUG – Exception on /buy [GET]
+Traceback (most recent call last):
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\decorator.py", line 68, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\uri_parsing.py", line 149, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\validation.py", line 399, in wrapper
+    return function(request)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\response.py", line 112, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\parameter.py", line 120, in wrapper
+    return function(**kwargs)
+           ^^^^^^^^^^^^^^^^^^
+TypeError: get_buys() missing 1 required positional argument: 'timestamp'
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:19:52] "[35m[1mGET /buy HTTP/1.1[0m" 500 -
+STORAGE :: DEBUG – Exception on /buy [GET]
+Traceback (most recent call last):
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\decorator.py", line 68, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\uri_parsing.py", line 149, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\validation.py", line 399, in wrapper
+    return function(request)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\response.py", line 112, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\parameter.py", line 120, in wrapper
+    return function(**kwargs)
+           ^^^^^^^^^^^^^^^^^^
+TypeError: get_buys() missing 1 required positional argument: 'timestamp'
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:19:54] "[35m[1mGET /buy HTTP/1.1[0m" 500 -
+STORAGE :: DEBUG – [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8090
+ * Running on http://192.168.0.57:8090
+STORAGE :: DEBUG – [33mPress CTRL+C to quit[0m
+STORAGE :: DEBUG – Exception on /buy [GET]
+Traceback (most recent call last):
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\decorator.py", line 68, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\uri_parsing.py", line 149, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\validation.py", line 399, in wrapper
+    return function(request)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\response.py", line 112, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\parameter.py", line 120, in wrapper
+    return function(**kwargs)
+           ^^^^^^^^^^^^^^^^^^
+TypeError: get_buys() missing 1 required positional argument: 'timestamp'
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:22:54] "[35m[1mGET /buy HTTP/1.1[0m" 500 -
+STORAGE :: DEBUG – [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8090
+ * Running on http://192.168.0.57:8090
+STORAGE :: DEBUG – [33mPress CTRL+C to quit[0m
+STORAGE :: DEBUG – Exception on /buy [GET]
+Traceback (most recent call last):
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\decorator.py", line 68, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\uri_parsing.py", line 149, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\validation.py", line 399, in wrapper
+    return function(request)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\response.py", line 112, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\parameter.py", line 120, in wrapper
+    return function(**kwargs)
+           ^^^^^^^^^^^^^^^^^^
+TypeError: get_buys() missing 1 required positional argument: 'timestamp'
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:26:59] "[35m[1mGET /buy HTTP/1.1[0m" 500 -
+STORAGE :: DEBUG – [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8090
+ * Running on http://192.168.0.57:8090
+STORAGE :: DEBUG – [33mPress CTRL+C to quit[0m
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:35:14] "GET /ui/ HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:35:14] "[36mGET /ui/swagger-ui.css HTTP/1.1[0m" 304 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:35:14] "[36mGET /ui/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:35:15] "[36mGET /ui/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:35:15] "GET /openapi.json HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:35:15] "[36mGET /ui/favicon-32x32.png HTTP/1.1[0m" 304 -
+STORAGE :: DEBUG – Stored buy event: {'buy_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851', 'buy_qty': 1, 'item_name': 'Item 1', 'item_price': 19.99, 'trace_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851'}
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:35:33] "[35m[1mPOST /buy HTTP/1.1[0m" 201 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:35:40] "[35m[1mPOST /sell HTTP/1.1[0m" 201 -
+STORAGE :: DEBUG – Exception on /buy [GET]
+Traceback (most recent call last):
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\decorator.py", line 68, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\uri_parsing.py", line 149, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\validation.py", line 399, in wrapper
+    return function(request)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\response.py", line 112, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\parameter.py", line 120, in wrapper
+    return function(**kwargs)
+           ^^^^^^^^^^^^^^^^^^
+TypeError: get_buys() missing 1 required positional argument: 'timestamp'
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:35:45] "[35m[1mGET /buy HTTP/1.1[0m" 500 -
+STORAGE :: DEBUG – Exception on /buy [GET]
+Traceback (most recent call last):
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\decorator.py", line 68, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\uri_parsing.py", line 149, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\validation.py", line 399, in wrapper
+    return function(request)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\response.py", line 112, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\parameter.py", line 120, in wrapper
+    return function(**kwargs)
+           ^^^^^^^^^^^^^^^^^^
+TypeError: get_buys() missing 1 required positional argument: 'timestamp'
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:35:48] "[35m[1mGET /buy HTTP/1.1[0m" 500 -
+STORAGE :: DEBUG – [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8090
+ * Running on http://192.168.0.57:8090
+STORAGE :: DEBUG – [33mPress CTRL+C to quit[0m
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:42:27] "[35m[1mPOST /sell HTTP/1.1[0m" 201 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:43:47] "GET /buy?timestamp=2001-11-27 HTTP/1.1" 200 -
+STORAGE :: DEBUG – Exception on /sell [GET]
+Traceback (most recent call last):
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\decorator.py", line 68, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\uri_parsing.py", line 149, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\validation.py", line 399, in wrapper
+    return function(request)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\response.py", line 112, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\parameter.py", line 120, in wrapper
+    return function(**kwargs)
+           ^^^^^^^^^^^^^^^^^^
+TypeError: get_sells() missing 1 required positional argument: 'timestamp'
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:44:08] "[35m[1mGET /sell HTTP/1.1[0m" 500 -
+STORAGE :: DEBUG – Exception on /sell [GET]
+Traceback (most recent call last):
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\decorator.py", line 68, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\uri_parsing.py", line 149, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\validation.py", line 399, in wrapper
+    return function(request)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\response.py", line 112, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\parameter.py", line 120, in wrapper
+    return function(**kwargs)
+           ^^^^^^^^^^^^^^^^^^
+TypeError: get_sells() missing 1 required positional argument: 'timestamp'
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:44:12] "[35m[1mGET /sell HTTP/1.1[0m" 500 -
+STORAGE :: DEBUG – [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8090
+ * Running on http://192.168.0.57:8090
+STORAGE :: DEBUG – [33mPress CTRL+C to quit[0m
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:47:48] "GET /buy?timestamp=2001-11-27 HTTP/1.1" 200 -
+STORAGE :: DEBUG – Exception on /sell [GET]
+Traceback (most recent call last):
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\decorator.py", line 68, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\uri_parsing.py", line 149, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\validation.py", line 399, in wrapper
+    return function(request)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\response.py", line 112, in wrapper
+    response = function(request)
+               ^^^^^^^^^^^^^^^^^
+  File "C:\BCIT\Term 4\ACIT 3855(Service Based Architechture)\Week 7\Lab5\Storage\venv\Lib\site-packages\connexion\decorators\parameter.py", line 120, in wrapper
+    return function(**kwargs)
+           ^^^^^^^^^^^^^^^^^^
+TypeError: get_sells() missing 1 required positional argument: 'timestamp'
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:47:53] "[35m[1mGET /sell HTTP/1.1[0m" 500 -
+STORAGE :: DEBUG – [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8090
+ * Running on http://192.168.0.57:8090
+STORAGE :: DEBUG – [33mPress CTRL+C to quit[0m
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:48:38] "GET /ui/ HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:48:38] "[36mGET /ui/swagger-ui.css HTTP/1.1[0m" 304 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:48:38] "[36mGET /ui/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:48:38] "[36mGET /ui/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:48:39] "GET /openapi.json HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:48:39] "[36mGET /ui/favicon-32x32.png HTTP/1.1[0m" 304 -
+STORAGE :: DEBUG – Stored buy event: {'buy_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851', 'buy_qty': 1, 'item_name': 'Item 1', 'item_price': 19.99, 'trace_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851'}
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:48:59] "[35m[1mPOST /buy HTTP/1.1[0m" 201 -
+STORAGE :: DEBUG – Stored buy event: {'buy_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851', 'buy_qty': 1, 'item_name': 'Item 1', 'item_price': 19.99, 'trace_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851'}
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:49:01] "[35m[1mPOST /buy HTTP/1.1[0m" 201 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:49:07] "[35m[1mPOST /sell HTTP/1.1[0m" 201 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:49:08] "[35m[1mPOST /sell HTTP/1.1[0m" 201 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:49:17] "GET /ui/ HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:49:17] "[36mGET /ui/swagger-ui.css HTTP/1.1[0m" 304 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:49:17] "[36mGET /ui/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:49:17] "[36mGET /ui/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:49:18] "GET /openapi.json HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:49:18] "[36mGET /ui/favicon-32x32.png HTTP/1.1[0m" 304 -
+STORAGE :: DEBUG – [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8090
+ * Running on http://192.168.0.57:8090
+STORAGE :: DEBUG – [33mPress CTRL+C to quit[0m
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:50:33] "GET /ui/ HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:50:33] "[36mGET /ui/swagger-ui.css HTTP/1.1[0m" 304 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:50:33] "[36mGET /ui/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:50:33] "[36mGET /ui/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:50:33] "GET /openapi.json HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:50:33] "[36mGET /ui/favicon-32x32.png HTTP/1.1[0m" 304 -
+STORAGE :: DEBUG – Stored buy event: {'buy_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851', 'buy_qty': 1, 'item_name': 'Item 1', 'item_price': 19.99, 'trace_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851'}
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:50:38] "[35m[1mPOST /buy HTTP/1.1[0m" 201 -
+STORAGE :: DEBUG – Stored buy event: {'buy_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851', 'buy_qty': 1, 'item_name': 'Item 1', 'item_price': 19.99, 'trace_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851'}
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:50:40] "[35m[1mPOST /buy HTTP/1.1[0m" 201 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:50:49] "[35m[1mPOST /sell HTTP/1.1[0m" 201 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:51:13] "GET /buy?timestamp=2001-11-27 HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [25/Feb/2023 19:51:27] "GET /sell?timestamp=2001-11-27 HTTP/1.1" 200 -
+STORAGE :: DEBUG – [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8090
+ * Running on http://192.168.0.57:8090
+STORAGE :: DEBUG – [33mPress CTRL+C to quit[0m
+STORAGE :: DEBUG – [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8090
+ * Running on http://192.168.0.57:8090
+STORAGE :: DEBUG – [33mPress CTRL+C to quit[0m
+STORAGE :: DEBUG – [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8090
+ * Running on http://192.168.0.57:8090
+STORAGE :: DEBUG – [33mPress CTRL+C to quit[0m
+STORAGE :: DEBUG – 127.0.0.1 - - [26/Feb/2023 20:39:43] "[32mGET /ui HTTP/1.1[0m" 308 -
+STORAGE :: DEBUG – 127.0.0.1 - - [26/Feb/2023 20:39:43] "GET /ui/ HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [26/Feb/2023 20:39:43] "[36mGET /ui/swagger-ui.css HTTP/1.1[0m" 304 -
+STORAGE :: DEBUG – 127.0.0.1 - - [26/Feb/2023 20:39:43] "[36mGET /ui/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+STORAGE :: DEBUG – 127.0.0.1 - - [26/Feb/2023 20:39:43] "[36mGET /ui/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+STORAGE :: DEBUG – 127.0.0.1 - - [26/Feb/2023 20:39:44] "GET /openapi.json HTTP/1.1" 200 -
+STORAGE :: DEBUG – [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8090
+ * Running on http://192.168.0.57:8090
+STORAGE :: DEBUG – [33mPress CTRL+C to quit[0m
+STORAGE :: DEBUG – [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8090
+ * Running on http://192.168.0.57:8090
+STORAGE :: DEBUG – [33mPress CTRL+C to quit[0m
+STORAGE :: DEBUG – Stored buy event: {'buy_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851', 'buy_qty': 1, 'item_name': 'Item 1', 'item_price': 19.99, 'trace_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851'}
+STORAGE :: DEBUG – 127.0.0.1 - - [26/Feb/2023 20:50:38] "[35m[1mPOST /buy HTTP/1.1[0m" 201 -
+STORAGE :: DEBUG – 127.0.0.1 - - [26/Feb/2023 20:50:44] "[35m[1mPOST /sell HTTP/1.1[0m" 201 -
+STORAGE :: DEBUG – 127.0.0.1 - - [26/Feb/2023 20:50:45] "[35m[1mPOST /sell HTTP/1.1[0m" 201 -
+STORAGE :: DEBUG – 127.0.0.1 - - [26/Feb/2023 20:51:04] "GET /buy?timestamp=2001-11-27 HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [26/Feb/2023 20:51:08] "GET /buy?timestamp=2001-11-27 HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [26/Feb/2023 20:51:25] "GET /sell?timestamp=2001-1-1 HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [26/Feb/2023 20:51:26] "GET /sell?timestamp=2001-1-1 HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [26/Feb/2023 20:59:18] "GET /ui/ HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [26/Feb/2023 20:59:18] "[36mGET /ui/swagger-ui.css HTTP/1.1[0m" 304 -
+STORAGE :: DEBUG – 127.0.0.1 - - [26/Feb/2023 20:59:18] "[36mGET /ui/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+STORAGE :: DEBUG – 127.0.0.1 - - [26/Feb/2023 20:59:18] "[36mGET /ui/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+STORAGE :: DEBUG – 127.0.0.1 - - [26/Feb/2023 20:59:18] "GET /openapi.json HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [26/Feb/2023 20:59:18] "[36mGET /ui/favicon-32x32.png HTTP/1.1[0m" 304 -
+STORAGE :: DEBUG – CONSUMER::storing buy event
+STORAGE :: DEBUG – {'type': 'buy', 'datetime': '2023-02-26 21:03:14', 'payload': {'buy_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851', 'buy_qty': 1, 'item_name': 'Item 1', 'item_price': 19.99, 'trace_id': '2ca751d5-07d5-40a8-b1a8-a7064110652a'}}
+STORAGE :: DEBUG – CONSUMER::storing sell event
+STORAGE :: DEBUG – {'type': 'sell', 'datetime': '2023-02-26 21:03:36', 'payload': {'item_name': 'Item 1', 'item_price': 19.99, 'sell_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851', 'sell_qty': 1, 'trace_id': '8c547d7f-0b7a-4ad1-8d47-4355a80cb298'}}
+STORAGE :: DEBUG – [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8090
+ * Running on http://192.168.0.57:8090
+STORAGE :: DEBUG – [33mPress CTRL+C to quit[0m
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 18:46:36] "[32mGET /ui HTTP/1.1[0m" 308 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 18:46:36] "GET /ui/ HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 18:46:36] "GET /ui/swagger-ui.css HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 18:46:37] "GET /ui/swagger-ui-bundle.js HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 18:46:37] "GET /ui/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 18:46:37] "GET /openapi.json HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 18:46:37] "GET /ui/favicon-32x32.png HTTP/1.1" 200 -
+STORAGE :: DEBUG – Stored buy event: {'buy_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851', 'buy_qty': 1, 'item_name': 'Item 1', 'item_price': 19.99, 'trace_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851'}
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 18:46:56] "[35m[1mPOST /buy HTTP/1.1[0m" 201 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 18:47:03] "[35m[1mPOST /sell HTTP/1.1[0m" 201 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 18:47:05] "[35m[1mPOST /sell HTTP/1.1[0m" 201 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 18:47:28] "GET /buy?timestamp=2007-8-9 HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 18:47:53] "GET /sell?timestamp=2021-2-8 HTTP/1.1" 200 -
+STORAGE :: DEBUG – CONSUMER::storing buy event
+STORAGE :: DEBUG – {'type': 'buy', 'datetime': '2023-03-07 18:49:16', 'payload': {'buy_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851', 'buy_qty': 1, 'item_name': 'Item 1', 'item_price': 19.99, 'trace_id': 'd74518cc-1313-4824-b5df-e933a7d583da'}}
+STORAGE :: DEBUG – CONSUMER::storing sell event
+STORAGE :: DEBUG – {'type': 'sell', 'datetime': '2023-03-07 18:49:42', 'payload': {'item_name': 'Item 6', 'item_price': 19.99, 'sell_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851', 'sell_qty': 1, 'trace_id': '0bbbd461-4c29-4bc7-babb-532569f2a72f'}}
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:00:13] "GET /buy?timestamp=2023-02-20T13:20:11Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:00:15] "GET /sell?timestamp=2023-02-20T13:20:11Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:00:17] "GET /buy?timestamp=2023-03-07T19:00:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:00:19] "GET /sell?timestamp=2023-03-07T19:00:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:00:22] "GET /buy?timestamp=2023-03-07T19:00:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:00:24] "GET /sell?timestamp=2023-03-07T19:00:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:00:27] "GET /buy?timestamp=2023-03-07T19:00:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:00:29] "GET /sell?timestamp=2023-03-07T19:00:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:00:32] "GET /buy?timestamp=2023-03-07T19:00:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:00:34] "GET /sell?timestamp=2023-03-07T19:00:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:00:37] "GET /buy?timestamp=2023-03-07T19:00:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:00:39] "GET /sell?timestamp=2023-03-07T19:00:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:00:42] "GET /buy?timestamp=2023-03-07T19:00:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:00:44] "GET /sell?timestamp=2023-03-07T19:00:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:00:47] "GET /buy?timestamp=2023-03-07T19:00:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:00:49] "GET /sell?timestamp=2023-03-07T19:00:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:00:52] "GET /buy?timestamp=2023-03-07T19:00:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:00:54] "GET /sell?timestamp=2023-03-07T19:00:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:00:57] "GET /buy?timestamp=2023-03-07T19:00:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:00:59] "GET /sell?timestamp=2023-03-07T19:00:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:01:02] "GET /buy?timestamp=2023-03-07T19:00:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:01:04] "GET /sell?timestamp=2023-03-07T19:00:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:01:07] "GET /buy?timestamp=2023-03-07T19:01:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:01:09] "GET /sell?timestamp=2023-03-07T19:01:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:01:12] "GET /buy?timestamp=2023-03-07T19:01:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:01:14] "GET /sell?timestamp=2023-03-07T19:01:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:01:17] "GET /buy?timestamp=2023-03-07T19:01:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:01:19] "GET /sell?timestamp=2023-03-07T19:01:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:01:22] "GET /buy?timestamp=2023-03-07T19:01:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:01:24] "GET /sell?timestamp=2023-03-07T19:01:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:01:27] "GET /buy?timestamp=2023-03-07T19:01:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:01:29] "GET /sell?timestamp=2023-03-07T19:01:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:01:32] "GET /buy?timestamp=2023-03-07T19:01:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:01:34] "GET /sell?timestamp=2023-03-07T19:01:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:01:37] "GET /buy?timestamp=2023-03-07T19:01:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:01:39] "GET /sell?timestamp=2023-03-07T19:01:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:01:42] "GET /buy?timestamp=2023-03-07T19:01:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:01:44] "GET /sell?timestamp=2023-03-07T19:01:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:01:47] "GET /buy?timestamp=2023-03-07T19:01:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:01:49] "GET /sell?timestamp=2023-03-07T19:01:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:01:52] "GET /buy?timestamp=2023-03-07T19:01:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:01:54] "GET /sell?timestamp=2023-03-07T19:01:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:01:57] "GET /buy?timestamp=2023-03-07T19:01:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:01:59] "GET /sell?timestamp=2023-03-07T19:01:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:02:02] "GET /buy?timestamp=2023-03-07T19:01:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:02:04] "GET /sell?timestamp=2023-03-07T19:01:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:02:07] "GET /buy?timestamp=2023-03-07T19:02:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:02:09] "GET /sell?timestamp=2023-03-07T19:02:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:02:12] "GET /buy?timestamp=2023-03-07T19:02:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:02:14] "GET /sell?timestamp=2023-03-07T19:02:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:02:17] "GET /buy?timestamp=2023-03-07T19:02:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:02:19] "GET /sell?timestamp=2023-03-07T19:02:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:02:22] "GET /buy?timestamp=2023-03-07T19:02:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:02:24] "GET /sell?timestamp=2023-03-07T19:02:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:02:27] "GET /buy?timestamp=2023-03-07T19:02:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:02:29] "GET /sell?timestamp=2023-03-07T19:02:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:02:32] "GET /buy?timestamp=2023-03-07T19:02:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:02:34] "GET /sell?timestamp=2023-03-07T19:02:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:02:37] "GET /buy?timestamp=2023-03-07T19:02:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:02:39] "GET /sell?timestamp=2023-03-07T19:02:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:02:42] "GET /buy?timestamp=2023-03-07T19:02:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:02:44] "GET /sell?timestamp=2023-03-07T19:02:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:02:47] "GET /buy?timestamp=2023-03-07T19:02:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:02:49] "GET /sell?timestamp=2023-03-07T19:02:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:02:52] "GET /buy?timestamp=2023-03-07T19:02:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:02:54] "GET /sell?timestamp=2023-03-07T19:02:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:02:57] "GET /buy?timestamp=2023-03-07T19:02:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:02:59] "GET /sell?timestamp=2023-03-07T19:02:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:03:02] "GET /buy?timestamp=2023-03-07T19:02:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:03:04] "GET /sell?timestamp=2023-03-07T19:02:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:03:07] "GET /buy?timestamp=2023-03-07T19:03:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:03:09] "GET /sell?timestamp=2023-03-07T19:03:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:03:12] "GET /buy?timestamp=2023-03-07T19:03:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:03:14] "GET /sell?timestamp=2023-03-07T19:03:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:03:17] "GET /buy?timestamp=2023-03-07T19:03:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:03:19] "GET /sell?timestamp=2023-03-07T19:03:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:03:22] "GET /buy?timestamp=2023-03-07T19:03:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:03:24] "GET /sell?timestamp=2023-03-07T19:03:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:03:27] "GET /buy?timestamp=2023-03-07T19:03:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:03:29] "GET /sell?timestamp=2023-03-07T19:03:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:03:32] "GET /buy?timestamp=2023-03-07T19:03:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:03:34] "GET /sell?timestamp=2023-03-07T19:03:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:03:37] "GET /buy?timestamp=2023-03-07T19:03:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:03:39] "GET /sell?timestamp=2023-03-07T19:03:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:03:42] "GET /buy?timestamp=2023-03-07T19:03:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:03:44] "GET /sell?timestamp=2023-03-07T19:03:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:03:47] "GET /buy?timestamp=2023-03-07T19:03:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:03:49] "GET /sell?timestamp=2023-03-07T19:03:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:03:52] "GET /buy?timestamp=2023-03-07T19:03:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:03:54] "GET /sell?timestamp=2023-03-07T19:03:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:03:57] "GET /buy?timestamp=2023-03-07T19:03:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:03:59] "GET /sell?timestamp=2023-03-07T19:03:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:04:02] "GET /buy?timestamp=2023-03-07T19:03:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:04:04] "GET /sell?timestamp=2023-03-07T19:03:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:04:07] "GET /buy?timestamp=2023-03-07T19:04:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:04:09] "GET /sell?timestamp=2023-03-07T19:04:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:04:12] "GET /buy?timestamp=2023-03-07T19:04:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:04:14] "GET /sell?timestamp=2023-03-07T19:04:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:04:17] "GET /buy?timestamp=2023-03-07T19:04:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:04:19] "GET /sell?timestamp=2023-03-07T19:04:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:04:22] "GET /buy?timestamp=2023-03-07T19:04:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:04:24] "GET /sell?timestamp=2023-03-07T19:04:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:04:27] "GET /buy?timestamp=2023-03-07T19:04:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:04:29] "GET /sell?timestamp=2023-03-07T19:04:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:04:32] "GET /buy?timestamp=2023-03-07T19:04:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:04:34] "GET /sell?timestamp=2023-03-07T19:04:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:04:37] "GET /buy?timestamp=2023-03-07T19:04:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:04:39] "GET /sell?timestamp=2023-03-07T19:04:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:04:42] "GET /buy?timestamp=2023-03-07T19:04:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:04:44] "GET /sell?timestamp=2023-03-07T19:04:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:04:47] "GET /buy?timestamp=2023-03-07T19:04:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:04:49] "GET /sell?timestamp=2023-03-07T19:04:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:04:52] "GET /buy?timestamp=2023-03-07T19:04:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:04:54] "GET /sell?timestamp=2023-03-07T19:04:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:04:57] "GET /buy?timestamp=2023-03-07T19:04:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:04:59] "GET /sell?timestamp=2023-03-07T19:04:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:05:02] "GET /buy?timestamp=2023-03-07T19:04:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:05:04] "GET /sell?timestamp=2023-03-07T19:04:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:05:07] "GET /buy?timestamp=2023-03-07T19:05:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:05:09] "GET /sell?timestamp=2023-03-07T19:05:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:05:12] "GET /buy?timestamp=2023-03-07T19:05:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:05:14] "GET /sell?timestamp=2023-03-07T19:05:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:05:17] "GET /buy?timestamp=2023-03-07T19:05:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:05:19] "GET /sell?timestamp=2023-03-07T19:05:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:05:22] "GET /buy?timestamp=2023-03-07T19:05:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:05:24] "GET /sell?timestamp=2023-03-07T19:05:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:05:27] "GET /buy?timestamp=2023-03-07T19:05:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:05:29] "GET /sell?timestamp=2023-03-07T19:05:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:05:32] "GET /buy?timestamp=2023-03-07T19:05:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:05:34] "GET /sell?timestamp=2023-03-07T19:05:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:05:37] "GET /buy?timestamp=2023-03-07T19:05:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:05:39] "GET /sell?timestamp=2023-03-07T19:05:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:05:42] "GET /buy?timestamp=2023-03-07T19:05:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:05:44] "GET /sell?timestamp=2023-03-07T19:05:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:05:47] "GET /buy?timestamp=2023-03-07T19:05:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:05:49] "GET /sell?timestamp=2023-03-07T19:05:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:05:52] "GET /buy?timestamp=2023-03-07T19:05:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:05:54] "GET /sell?timestamp=2023-03-07T19:05:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:05:57] "GET /buy?timestamp=2023-03-07T19:05:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:05:59] "GET /sell?timestamp=2023-03-07T19:05:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:06:02] "GET /buy?timestamp=2023-03-07T19:05:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:06:04] "GET /sell?timestamp=2023-03-07T19:05:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:06:07] "GET /buy?timestamp=2023-03-07T19:06:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:06:09] "GET /sell?timestamp=2023-03-07T19:06:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:06:12] "GET /buy?timestamp=2023-03-07T19:06:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:06:14] "GET /sell?timestamp=2023-03-07T19:06:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:06:17] "GET /buy?timestamp=2023-03-07T19:06:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:06:19] "GET /sell?timestamp=2023-03-07T19:06:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:06:22] "GET /buy?timestamp=2023-03-07T19:06:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:06:24] "GET /sell?timestamp=2023-03-07T19:06:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:06:27] "GET /buy?timestamp=2023-03-07T19:06:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:06:29] "GET /sell?timestamp=2023-03-07T19:06:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:06:32] "GET /buy?timestamp=2023-03-07T19:06:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:06:34] "GET /sell?timestamp=2023-03-07T19:06:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:06:37] "GET /buy?timestamp=2023-03-07T19:06:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:06:39] "GET /sell?timestamp=2023-03-07T19:06:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:06:42] "GET /buy?timestamp=2023-03-07T19:06:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:06:44] "GET /sell?timestamp=2023-03-07T19:06:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:06:47] "GET /buy?timestamp=2023-03-07T19:06:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:06:49] "GET /sell?timestamp=2023-03-07T19:06:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:06:52] "GET /buy?timestamp=2023-03-07T19:06:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:06:54] "GET /sell?timestamp=2023-03-07T19:06:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:06:57] "GET /buy?timestamp=2023-03-07T19:06:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:06:59] "GET /sell?timestamp=2023-03-07T19:06:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:07:02] "GET /buy?timestamp=2023-03-07T19:06:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:07:04] "GET /sell?timestamp=2023-03-07T19:06:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:07:07] "GET /buy?timestamp=2023-03-07T19:07:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:07:09] "GET /sell?timestamp=2023-03-07T19:07:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:07:12] "GET /buy?timestamp=2023-03-07T19:07:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:07:14] "GET /sell?timestamp=2023-03-07T19:07:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:07:17] "GET /buy?timestamp=2023-03-07T19:07:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:07:19] "GET /sell?timestamp=2023-03-07T19:07:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:07:22] "GET /buy?timestamp=2023-03-07T19:07:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:07:24] "GET /sell?timestamp=2023-03-07T19:07:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:07:27] "GET /buy?timestamp=2023-03-07T19:07:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:07:29] "GET /sell?timestamp=2023-03-07T19:07:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:07:32] "GET /buy?timestamp=2023-03-07T19:07:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:07:34] "GET /sell?timestamp=2023-03-07T19:07:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:07:37] "GET /buy?timestamp=2023-03-07T19:07:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:07:39] "GET /sell?timestamp=2023-03-07T19:07:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:07:42] "GET /buy?timestamp=2023-03-07T19:07:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:07:44] "GET /sell?timestamp=2023-03-07T19:07:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:07:47] "GET /buy?timestamp=2023-03-07T19:07:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:07:49] "GET /sell?timestamp=2023-03-07T19:07:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:07:52] "GET /buy?timestamp=2023-03-07T19:07:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:07:54] "GET /sell?timestamp=2023-03-07T19:07:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:07:57] "GET /buy?timestamp=2023-03-07T19:07:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:07:59] "GET /sell?timestamp=2023-03-07T19:07:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:08:02] "GET /buy?timestamp=2023-03-07T19:07:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:08:04] "GET /sell?timestamp=2023-03-07T19:07:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:08:07] "GET /buy?timestamp=2023-03-07T19:08:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:08:09] "GET /sell?timestamp=2023-03-07T19:08:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:08:12] "GET /buy?timestamp=2023-03-07T19:08:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:08:14] "GET /sell?timestamp=2023-03-07T19:08:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:08:17] "GET /buy?timestamp=2023-03-07T19:08:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:08:19] "GET /sell?timestamp=2023-03-07T19:08:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:08:22] "GET /buy?timestamp=2023-03-07T19:08:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:08:24] "GET /sell?timestamp=2023-03-07T19:08:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:08:27] "GET /buy?timestamp=2023-03-07T19:08:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:08:29] "GET /sell?timestamp=2023-03-07T19:08:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:08:32] "GET /buy?timestamp=2023-03-07T19:08:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:08:34] "GET /sell?timestamp=2023-03-07T19:08:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:08:37] "GET /buy?timestamp=2023-03-07T19:08:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:08:39] "GET /sell?timestamp=2023-03-07T19:08:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:08:42] "GET /buy?timestamp=2023-03-07T19:08:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:08:44] "GET /sell?timestamp=2023-03-07T19:08:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:08:47] "GET /buy?timestamp=2023-03-07T19:08:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:08:49] "GET /sell?timestamp=2023-03-07T19:08:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:08:52] "GET /buy?timestamp=2023-03-07T19:08:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:08:54] "GET /sell?timestamp=2023-03-07T19:08:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:08:57] "GET /buy?timestamp=2023-03-07T19:08:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:08:59] "GET /sell?timestamp=2023-03-07T19:08:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:09:02] "GET /buy?timestamp=2023-03-07T19:08:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:09:04] "GET /sell?timestamp=2023-03-07T19:08:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:09:07] "GET /buy?timestamp=2023-03-07T19:09:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:09:09] "GET /sell?timestamp=2023-03-07T19:09:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:09:12] "GET /buy?timestamp=2023-03-07T19:09:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:09:14] "GET /sell?timestamp=2023-03-07T19:09:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:09:17] "GET /buy?timestamp=2023-03-07T19:09:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:09:19] "GET /sell?timestamp=2023-03-07T19:09:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:09:22] "GET /buy?timestamp=2023-03-07T19:09:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:09:24] "GET /sell?timestamp=2023-03-07T19:09:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:09:27] "GET /buy?timestamp=2023-03-07T19:09:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:09:29] "GET /sell?timestamp=2023-03-07T19:09:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:09:33] "GET /buy?timestamp=2023-03-07T19:09:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:09:35] "GET /sell?timestamp=2023-03-07T19:09:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:09:37] "GET /buy?timestamp=2023-03-07T19:09:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:09:40] "GET /sell?timestamp=2023-03-07T19:09:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:09:42] "GET /buy?timestamp=2023-03-07T19:09:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:09:44] "GET /sell?timestamp=2023-03-07T19:09:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:09:47] "GET /buy?timestamp=2023-03-07T19:09:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:09:49] "GET /sell?timestamp=2023-03-07T19:09:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:09:52] "GET /buy?timestamp=2023-03-07T19:09:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:09:54] "GET /sell?timestamp=2023-03-07T19:09:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:09:57] "GET /buy?timestamp=2023-03-07T19:09:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:09:59] "GET /sell?timestamp=2023-03-07T19:09:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:10:02] "GET /buy?timestamp=2023-03-07T19:09:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:10:04] "GET /sell?timestamp=2023-03-07T19:09:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:10:07] "GET /buy?timestamp=2023-03-07T19:10:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:10:09] "GET /sell?timestamp=2023-03-07T19:10:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:10:12] "GET /buy?timestamp=2023-03-07T19:10:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:10:14] "GET /sell?timestamp=2023-03-07T19:10:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:10:17] "GET /buy?timestamp=2023-03-07T19:10:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:10:19] "GET /sell?timestamp=2023-03-07T19:10:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:10:22] "GET /buy?timestamp=2023-03-07T19:10:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:10:24] "GET /sell?timestamp=2023-03-07T19:10:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:10:27] "GET /buy?timestamp=2023-03-07T19:10:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:10:29] "GET /sell?timestamp=2023-03-07T19:10:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:10:32] "GET /buy?timestamp=2023-03-07T19:10:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:10:34] "GET /sell?timestamp=2023-03-07T19:10:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:10:37] "GET /buy?timestamp=2023-03-07T19:10:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:10:39] "GET /sell?timestamp=2023-03-07T19:10:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:10:42] "GET /buy?timestamp=2023-03-07T19:10:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:10:44] "GET /sell?timestamp=2023-03-07T19:10:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:10:47] "GET /buy?timestamp=2023-03-07T19:10:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:10:50] "GET /sell?timestamp=2023-03-07T19:10:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:10:52] "GET /buy?timestamp=2023-03-07T19:10:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:10:54] "GET /sell?timestamp=2023-03-07T19:10:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:10:57] "GET /buy?timestamp=2023-03-07T19:10:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:10:59] "GET /sell?timestamp=2023-03-07T19:10:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:11:02] "GET /buy?timestamp=2023-03-07T19:10:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:11:04] "GET /sell?timestamp=2023-03-07T19:10:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:11:07] "GET /buy?timestamp=2023-03-07T19:11:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:11:09] "GET /sell?timestamp=2023-03-07T19:11:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:11:12] "GET /buy?timestamp=2023-03-07T19:11:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:11:14] "GET /sell?timestamp=2023-03-07T19:11:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:11:17] "GET /buy?timestamp=2023-03-07T19:11:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:11:19] "GET /sell?timestamp=2023-03-07T19:11:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:11:22] "GET /buy?timestamp=2023-03-07T19:11:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:11:24] "GET /sell?timestamp=2023-03-07T19:11:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:11:27] "GET /buy?timestamp=2023-03-07T19:11:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:11:29] "GET /sell?timestamp=2023-03-07T19:11:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:11:32] "GET /buy?timestamp=2023-03-07T19:11:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:11:34] "GET /sell?timestamp=2023-03-07T19:11:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:11:37] "GET /buy?timestamp=2023-03-07T19:11:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:11:39] "GET /sell?timestamp=2023-03-07T19:11:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:11:42] "GET /buy?timestamp=2023-03-07T19:11:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:11:44] "GET /sell?timestamp=2023-03-07T19:11:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:11:47] "GET /buy?timestamp=2023-03-07T19:11:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:11:49] "GET /sell?timestamp=2023-03-07T19:11:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:11:52] "GET /buy?timestamp=2023-03-07T19:11:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:11:54] "GET /sell?timestamp=2023-03-07T19:11:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:11:57] "GET /buy?timestamp=2023-03-07T19:11:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:11:59] "GET /sell?timestamp=2023-03-07T19:11:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:12:02] "GET /buy?timestamp=2023-03-07T19:11:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:12:04] "GET /sell?timestamp=2023-03-07T19:11:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:12:07] "GET /buy?timestamp=2023-03-07T19:12:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:12:09] "GET /sell?timestamp=2023-03-07T19:12:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:12:12] "GET /buy?timestamp=2023-03-07T19:12:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:12:15] "GET /sell?timestamp=2023-03-07T19:12:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:12:17] "GET /buy?timestamp=2023-03-07T19:12:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:12:19] "GET /sell?timestamp=2023-03-07T19:12:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:12:22] "GET /buy?timestamp=2023-03-07T19:12:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:12:24] "GET /sell?timestamp=2023-03-07T19:12:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:12:27] "GET /buy?timestamp=2023-03-07T19:12:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:12:29] "GET /sell?timestamp=2023-03-07T19:12:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:12:32] "GET /buy?timestamp=2023-03-07T19:12:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:12:34] "GET /sell?timestamp=2023-03-07T19:12:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:12:37] "GET /buy?timestamp=2023-03-07T19:12:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:12:39] "GET /sell?timestamp=2023-03-07T19:12:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:12:42] "GET /buy?timestamp=2023-03-07T19:12:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:12:44] "GET /sell?timestamp=2023-03-07T19:12:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:12:47] "GET /buy?timestamp=2023-03-07T19:12:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:12:49] "GET /sell?timestamp=2023-03-07T19:12:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:12:52] "GET /buy?timestamp=2023-03-07T19:12:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:12:54] "GET /sell?timestamp=2023-03-07T19:12:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:12:57] "GET /buy?timestamp=2023-03-07T19:12:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:12:59] "GET /sell?timestamp=2023-03-07T19:12:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:13:02] "GET /buy?timestamp=2023-03-07T19:12:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:13:04] "GET /sell?timestamp=2023-03-07T19:12:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:13:07] "GET /buy?timestamp=2023-03-07T19:13:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:13:09] "GET /sell?timestamp=2023-03-07T19:13:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:13:12] "GET /buy?timestamp=2023-03-07T19:13:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:13:14] "GET /sell?timestamp=2023-03-07T19:13:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:13:17] "GET /buy?timestamp=2023-03-07T19:13:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:13:19] "GET /sell?timestamp=2023-03-07T19:13:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:13:22] "GET /buy?timestamp=2023-03-07T19:13:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:13:24] "GET /sell?timestamp=2023-03-07T19:13:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:13:27] "GET /buy?timestamp=2023-03-07T19:13:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:13:29] "GET /sell?timestamp=2023-03-07T19:13:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:13:32] "GET /buy?timestamp=2023-03-07T19:13:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:13:34] "GET /sell?timestamp=2023-03-07T19:13:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:13:37] "GET /buy?timestamp=2023-03-07T19:13:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:13:39] "GET /sell?timestamp=2023-03-07T19:13:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:13:42] "GET /buy?timestamp=2023-03-07T19:13:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:13:44] "GET /sell?timestamp=2023-03-07T19:13:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:13:47] "GET /buy?timestamp=2023-03-07T19:13:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:13:49] "GET /sell?timestamp=2023-03-07T19:13:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:13:52] "GET /buy?timestamp=2023-03-07T19:13:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:13:54] "GET /sell?timestamp=2023-03-07T19:13:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:13:57] "GET /buy?timestamp=2023-03-07T19:13:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:13:59] "GET /sell?timestamp=2023-03-07T19:13:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:14:02] "GET /buy?timestamp=2023-03-07T19:13:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:14:04] "GET /sell?timestamp=2023-03-07T19:13:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:14:07] "GET /buy?timestamp=2023-03-07T19:14:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:14:09] "GET /sell?timestamp=2023-03-07T19:14:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:14:12] "GET /buy?timestamp=2023-03-07T19:14:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:14:14] "GET /sell?timestamp=2023-03-07T19:14:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:14:17] "GET /buy?timestamp=2023-03-07T19:14:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:14:19] "GET /sell?timestamp=2023-03-07T19:14:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:14:22] "GET /buy?timestamp=2023-03-07T19:14:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:14:24] "GET /sell?timestamp=2023-03-07T19:14:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:14:27] "GET /buy?timestamp=2023-03-07T19:14:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:14:29] "GET /sell?timestamp=2023-03-07T19:14:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:14:32] "GET /buy?timestamp=2023-03-07T19:14:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:14:34] "GET /sell?timestamp=2023-03-07T19:14:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:14:37] "GET /buy?timestamp=2023-03-07T19:14:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:14:39] "GET /sell?timestamp=2023-03-07T19:14:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:14:42] "GET /buy?timestamp=2023-03-07T19:14:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:14:44] "GET /sell?timestamp=2023-03-07T19:14:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:14:47] "GET /buy?timestamp=2023-03-07T19:14:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:14:49] "GET /sell?timestamp=2023-03-07T19:14:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:14:52] "GET /buy?timestamp=2023-03-07T19:14:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:14:54] "GET /sell?timestamp=2023-03-07T19:14:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:14:57] "GET /buy?timestamp=2023-03-07T19:14:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:14:59] "GET /sell?timestamp=2023-03-07T19:14:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:15:02] "GET /buy?timestamp=2023-03-07T19:14:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:15:04] "GET /sell?timestamp=2023-03-07T19:14:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:15:07] "GET /buy?timestamp=2023-03-07T19:15:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:15:09] "GET /sell?timestamp=2023-03-07T19:15:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:15:12] "GET /buy?timestamp=2023-03-07T19:15:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:15:14] "GET /sell?timestamp=2023-03-07T19:15:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:15:17] "GET /buy?timestamp=2023-03-07T19:15:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:15:19] "GET /sell?timestamp=2023-03-07T19:15:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:15:22] "GET /buy?timestamp=2023-03-07T19:15:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:15:24] "GET /sell?timestamp=2023-03-07T19:15:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:15:27] "GET /buy?timestamp=2023-03-07T19:15:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:15:29] "GET /sell?timestamp=2023-03-07T19:15:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:15:32] "GET /buy?timestamp=2023-03-07T19:15:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:15:34] "GET /sell?timestamp=2023-03-07T19:15:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:15:37] "GET /buy?timestamp=2023-03-07T19:15:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:15:39] "GET /sell?timestamp=2023-03-07T19:15:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:15:42] "GET /buy?timestamp=2023-03-07T19:15:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:15:44] "GET /sell?timestamp=2023-03-07T19:15:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:15:47] "GET /buy?timestamp=2023-03-07T19:15:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:15:49] "GET /sell?timestamp=2023-03-07T19:15:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:15:52] "GET /buy?timestamp=2023-03-07T19:15:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:15:54] "GET /sell?timestamp=2023-03-07T19:15:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:15:57] "GET /buy?timestamp=2023-03-07T19:15:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:15:59] "GET /sell?timestamp=2023-03-07T19:15:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:16:02] "GET /buy?timestamp=2023-03-07T19:15:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:16:04] "GET /sell?timestamp=2023-03-07T19:15:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:16:07] "GET /buy?timestamp=2023-03-07T19:16:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:16:09] "GET /sell?timestamp=2023-03-07T19:16:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:16:12] "GET /buy?timestamp=2023-03-07T19:16:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:16:15] "GET /sell?timestamp=2023-03-07T19:16:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:16:17] "GET /buy?timestamp=2023-03-07T19:16:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:16:19] "GET /sell?timestamp=2023-03-07T19:16:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:16:22] "GET /buy?timestamp=2023-03-07T19:16:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:16:24] "GET /sell?timestamp=2023-03-07T19:16:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:16:27] "GET /buy?timestamp=2023-03-07T19:16:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:16:29] "GET /sell?timestamp=2023-03-07T19:16:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:16:32] "GET /buy?timestamp=2023-03-07T19:16:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:16:34] "GET /sell?timestamp=2023-03-07T19:16:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:16:37] "GET /buy?timestamp=2023-03-07T19:16:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:16:39] "GET /sell?timestamp=2023-03-07T19:16:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:16:42] "GET /buy?timestamp=2023-03-07T19:16:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:16:44] "GET /sell?timestamp=2023-03-07T19:16:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:16:47] "GET /buy?timestamp=2023-03-07T19:16:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:16:49] "GET /sell?timestamp=2023-03-07T19:16:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:16:52] "GET /buy?timestamp=2023-03-07T19:16:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:16:54] "GET /sell?timestamp=2023-03-07T19:16:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:16:57] "GET /buy?timestamp=2023-03-07T19:16:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:16:59] "GET /sell?timestamp=2023-03-07T19:16:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:17:02] "GET /buy?timestamp=2023-03-07T19:16:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:17:04] "GET /sell?timestamp=2023-03-07T19:16:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:17:07] "GET /buy?timestamp=2023-03-07T19:17:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:17:09] "GET /sell?timestamp=2023-03-07T19:17:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:17:12] "GET /buy?timestamp=2023-03-07T19:17:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:17:14] "GET /sell?timestamp=2023-03-07T19:17:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:17:17] "GET /buy?timestamp=2023-03-07T19:17:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:17:19] "GET /sell?timestamp=2023-03-07T19:17:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:17:22] "GET /buy?timestamp=2023-03-07T19:17:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:17:24] "GET /sell?timestamp=2023-03-07T19:17:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:17:27] "GET /buy?timestamp=2023-03-07T19:17:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:17:29] "GET /sell?timestamp=2023-03-07T19:17:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:17:32] "GET /buy?timestamp=2023-03-07T19:17:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:17:34] "GET /sell?timestamp=2023-03-07T19:17:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:17:37] "GET /buy?timestamp=2023-03-07T19:17:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:17:39] "GET /sell?timestamp=2023-03-07T19:17:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:17:42] "GET /buy?timestamp=2023-03-07T19:17:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:17:44] "GET /sell?timestamp=2023-03-07T19:17:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:17:47] "GET /buy?timestamp=2023-03-07T19:17:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:17:49] "GET /sell?timestamp=2023-03-07T19:17:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:17:52] "GET /buy?timestamp=2023-03-07T19:17:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:17:54] "GET /sell?timestamp=2023-03-07T19:17:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:17:57] "GET /buy?timestamp=2023-03-07T19:17:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:17:59] "GET /sell?timestamp=2023-03-07T19:17:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:18:02] "GET /buy?timestamp=2023-03-07T19:17:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:18:04] "GET /sell?timestamp=2023-03-07T19:17:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:18:07] "GET /buy?timestamp=2023-03-07T19:18:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:18:09] "GET /sell?timestamp=2023-03-07T19:18:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:18:12] "GET /buy?timestamp=2023-03-07T19:18:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:18:14] "GET /sell?timestamp=2023-03-07T19:18:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:18:17] "GET /buy?timestamp=2023-03-07T19:18:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:18:19] "GET /sell?timestamp=2023-03-07T19:18:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:18:22] "GET /buy?timestamp=2023-03-07T19:18:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:18:24] "GET /sell?timestamp=2023-03-07T19:18:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:18:27] "GET /buy?timestamp=2023-03-07T19:18:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:18:29] "GET /sell?timestamp=2023-03-07T19:18:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:18:32] "GET /buy?timestamp=2023-03-07T19:18:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:18:34] "GET /sell?timestamp=2023-03-07T19:18:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:18:37] "GET /buy?timestamp=2023-03-07T19:18:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:18:39] "GET /sell?timestamp=2023-03-07T19:18:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:18:42] "GET /buy?timestamp=2023-03-07T19:18:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:18:44] "GET /sell?timestamp=2023-03-07T19:18:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:18:47] "GET /buy?timestamp=2023-03-07T19:18:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:18:49] "GET /sell?timestamp=2023-03-07T19:18:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:18:52] "GET /buy?timestamp=2023-03-07T19:18:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:18:54] "GET /sell?timestamp=2023-03-07T19:18:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:18:57] "GET /buy?timestamp=2023-03-07T19:18:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:18:59] "GET /sell?timestamp=2023-03-07T19:18:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:19:03] "GET /buy?timestamp=2023-03-07T19:18:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:19:05] "GET /sell?timestamp=2023-03-07T19:18:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:19:08] "GET /buy?timestamp=2023-03-07T19:19:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:19:10] "GET /sell?timestamp=2023-03-07T19:19:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:19:18] "GET /buy?timestamp=2023-03-07T19:19:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:19:20] "GET /sell?timestamp=2023-03-07T19:19:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:19:23] "GET /buy?timestamp=2023-03-07T19:19:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:19:25] "GET /sell?timestamp=2023-03-07T19:19:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:19:28] "GET /buy?timestamp=2023-03-07T19:19:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:19:30] "GET /sell?timestamp=2023-03-07T19:19:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:19:32] "GET /buy?timestamp=2023-03-07T19:19:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:19:34] "GET /sell?timestamp=2023-03-07T19:19:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:19:37] "GET /buy?timestamp=2023-03-07T19:19:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:19:39] "GET /sell?timestamp=2023-03-07T19:19:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:19:42] "GET /buy?timestamp=2023-03-07T19:19:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:19:45] "GET /sell?timestamp=2023-03-07T19:19:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:19:47] "GET /buy?timestamp=2023-03-07T19:19:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:19:50] "GET /sell?timestamp=2023-03-07T19:19:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:19:52] "GET /buy?timestamp=2023-03-07T19:19:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:19:54] "GET /sell?timestamp=2023-03-07T19:19:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:19:57] "GET /buy?timestamp=2023-03-07T19:19:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:19:59] "GET /sell?timestamp=2023-03-07T19:19:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:20:02] "GET /buy?timestamp=2023-03-07T19:19:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:20:04] "GET /sell?timestamp=2023-03-07T19:19:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:20:07] "GET /buy?timestamp=2023-03-07T19:20:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:20:09] "GET /sell?timestamp=2023-03-07T19:20:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:20:12] "GET /buy?timestamp=2023-03-07T19:20:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:20:14] "GET /sell?timestamp=2023-03-07T19:20:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:20:17] "GET /buy?timestamp=2023-03-07T19:20:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:20:19] "GET /sell?timestamp=2023-03-07T19:20:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:20:22] "GET /buy?timestamp=2023-03-07T19:20:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:20:25] "GET /sell?timestamp=2023-03-07T19:20:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:20:27] "GET /buy?timestamp=2023-03-07T19:20:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:20:29] "GET /sell?timestamp=2023-03-07T19:20:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:20:32] "GET /buy?timestamp=2023-03-07T19:20:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:20:34] "GET /sell?timestamp=2023-03-07T19:20:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:20:37] "GET /buy?timestamp=2023-03-07T19:20:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:20:39] "GET /sell?timestamp=2023-03-07T19:20:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:20:42] "GET /buy?timestamp=2023-03-07T19:20:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:20:44] "GET /sell?timestamp=2023-03-07T19:20:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:20:47] "GET /buy?timestamp=2023-03-07T19:20:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:20:49] "GET /sell?timestamp=2023-03-07T19:20:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:20:52] "GET /buy?timestamp=2023-03-07T19:20:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:20:54] "GET /sell?timestamp=2023-03-07T19:20:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:20:57] "GET /buy?timestamp=2023-03-07T19:20:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:20:59] "GET /sell?timestamp=2023-03-07T19:20:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:21:02] "GET /buy?timestamp=2023-03-07T19:20:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:21:04] "GET /sell?timestamp=2023-03-07T19:20:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:21:07] "GET /buy?timestamp=2023-03-07T19:21:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:21:09] "GET /sell?timestamp=2023-03-07T19:21:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:21:12] "GET /buy?timestamp=2023-03-07T19:21:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:21:14] "GET /sell?timestamp=2023-03-07T19:21:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:21:17] "GET /buy?timestamp=2023-03-07T19:21:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:21:19] "GET /sell?timestamp=2023-03-07T19:21:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:21:22] "GET /buy?timestamp=2023-03-07T19:21:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:21:24] "GET /sell?timestamp=2023-03-07T19:21:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:21:27] "GET /buy?timestamp=2023-03-07T19:21:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:21:29] "GET /sell?timestamp=2023-03-07T19:21:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:21:32] "GET /buy?timestamp=2023-03-07T19:21:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:21:34] "GET /sell?timestamp=2023-03-07T19:21:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:21:37] "GET /buy?timestamp=2023-03-07T19:21:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:21:39] "GET /sell?timestamp=2023-03-07T19:21:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:21:42] "GET /buy?timestamp=2023-03-07T19:21:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:21:44] "GET /sell?timestamp=2023-03-07T19:21:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:21:47] "GET /buy?timestamp=2023-03-07T19:21:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:21:49] "GET /sell?timestamp=2023-03-07T19:21:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:21:52] "GET /buy?timestamp=2023-03-07T19:21:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:21:55] "GET /sell?timestamp=2023-03-07T19:21:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:21:57] "GET /buy?timestamp=2023-03-07T19:21:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:21:59] "GET /sell?timestamp=2023-03-07T19:21:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:22:02] "GET /buy?timestamp=2023-03-07T19:21:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:22:04] "GET /sell?timestamp=2023-03-07T19:21:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:22:07] "GET /buy?timestamp=2023-03-07T19:22:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:22:09] "GET /sell?timestamp=2023-03-07T19:22:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:22:12] "GET /buy?timestamp=2023-03-07T19:22:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:22:14] "GET /sell?timestamp=2023-03-07T19:22:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:22:17] "GET /buy?timestamp=2023-03-07T19:22:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:22:19] "GET /sell?timestamp=2023-03-07T19:22:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:22:22] "GET /buy?timestamp=2023-03-07T19:22:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:22:24] "GET /sell?timestamp=2023-03-07T19:22:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:22:27] "GET /buy?timestamp=2023-03-07T19:22:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:22:29] "GET /sell?timestamp=2023-03-07T19:22:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:22:32] "GET /buy?timestamp=2023-03-07T19:22:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:22:34] "GET /sell?timestamp=2023-03-07T19:22:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:22:37] "GET /buy?timestamp=2023-03-07T19:22:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:22:39] "GET /sell?timestamp=2023-03-07T19:22:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:22:42] "GET /buy?timestamp=2023-03-07T19:22:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:22:44] "GET /sell?timestamp=2023-03-07T19:22:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:22:47] "GET /buy?timestamp=2023-03-07T19:22:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:22:50] "GET /sell?timestamp=2023-03-07T19:22:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:22:52] "GET /buy?timestamp=2023-03-07T19:22:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:22:54] "GET /sell?timestamp=2023-03-07T19:22:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:22:57] "GET /buy?timestamp=2023-03-07T19:22:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:22:59] "GET /sell?timestamp=2023-03-07T19:22:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:23:02] "GET /buy?timestamp=2023-03-07T19:22:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:23:04] "GET /sell?timestamp=2023-03-07T19:22:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:23:07] "GET /buy?timestamp=2023-03-07T19:23:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:23:09] "GET /sell?timestamp=2023-03-07T19:23:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:23:12] "GET /buy?timestamp=2023-03-07T19:23:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:23:14] "GET /sell?timestamp=2023-03-07T19:23:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:23:17] "GET /buy?timestamp=2023-03-07T19:23:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:23:19] "GET /sell?timestamp=2023-03-07T19:23:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:23:22] "GET /buy?timestamp=2023-03-07T19:23:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:23:24] "GET /sell?timestamp=2023-03-07T19:23:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:23:27] "GET /buy?timestamp=2023-03-07T19:23:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:23:29] "GET /sell?timestamp=2023-03-07T19:23:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:23:32] "GET /buy?timestamp=2023-03-07T19:23:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:23:34] "GET /sell?timestamp=2023-03-07T19:23:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:23:37] "GET /buy?timestamp=2023-03-07T19:23:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:23:39] "GET /sell?timestamp=2023-03-07T19:23:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:23:42] "GET /buy?timestamp=2023-03-07T19:23:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:23:44] "GET /sell?timestamp=2023-03-07T19:23:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:23:47] "GET /buy?timestamp=2023-03-07T19:23:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:23:49] "GET /sell?timestamp=2023-03-07T19:23:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:23:52] "GET /buy?timestamp=2023-03-07T19:23:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:23:54] "GET /sell?timestamp=2023-03-07T19:23:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:23:57] "GET /buy?timestamp=2023-03-07T19:23:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:23:59] "GET /sell?timestamp=2023-03-07T19:23:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:24:02] "GET /buy?timestamp=2023-03-07T19:23:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:24:04] "GET /sell?timestamp=2023-03-07T19:23:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:24:07] "GET /buy?timestamp=2023-03-07T19:24:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:24:09] "GET /sell?timestamp=2023-03-07T19:24:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:24:12] "GET /buy?timestamp=2023-03-07T19:24:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:24:14] "GET /sell?timestamp=2023-03-07T19:24:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:24:17] "GET /buy?timestamp=2023-03-07T19:24:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:24:19] "GET /sell?timestamp=2023-03-07T19:24:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:24:22] "GET /buy?timestamp=2023-03-07T19:24:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:24:24] "GET /sell?timestamp=2023-03-07T19:24:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:24:27] "GET /buy?timestamp=2023-03-07T19:24:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:24:29] "GET /sell?timestamp=2023-03-07T19:24:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:24:32] "GET /buy?timestamp=2023-03-07T19:24:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:24:34] "GET /sell?timestamp=2023-03-07T19:24:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:24:37] "GET /buy?timestamp=2023-03-07T19:24:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:24:39] "GET /sell?timestamp=2023-03-07T19:24:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:24:42] "GET /buy?timestamp=2023-03-07T19:24:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:24:44] "GET /sell?timestamp=2023-03-07T19:24:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:24:47] "GET /buy?timestamp=2023-03-07T19:24:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:24:49] "GET /sell?timestamp=2023-03-07T19:24:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:24:52] "GET /buy?timestamp=2023-03-07T19:24:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:24:54] "GET /sell?timestamp=2023-03-07T19:24:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:24:57] "GET /buy?timestamp=2023-03-07T19:24:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:00] "GET /sell?timestamp=2023-03-07T19:24:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:02] "GET /buy?timestamp=2023-03-07T19:24:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:04] "GET /sell?timestamp=2023-03-07T19:24:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:07] "GET /buy?timestamp=2023-03-07T19:25:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:09] "GET /sell?timestamp=2023-03-07T19:25:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:12] "GET /buy?timestamp=2023-03-07T19:25:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:14] "GET /sell?timestamp=2023-03-07T19:25:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:17] "GET /buy?timestamp=2023-03-07T19:25:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:19] "GET /sell?timestamp=2023-03-07T19:25:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:22] "GET /buy?timestamp=2023-03-07T19:25:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:24] "GET /sell?timestamp=2023-03-07T19:25:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:27] "GET /buy?timestamp=2023-03-07T19:25:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:29] "GET /sell?timestamp=2023-03-07T19:25:20Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:32] "GET /buy?timestamp=2023-03-07T19:25:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:34] "GET /sell?timestamp=2023-03-07T19:25:25Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:37] "GET /buy?timestamp=2023-03-07T19:25:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:39] "GET /sell?timestamp=2023-03-07T19:25:30Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:42] "GET /buy?timestamp=2023-03-07T19:25:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:44] "GET /sell?timestamp=2023-03-07T19:25:35Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:47] "GET /buy?timestamp=2023-03-07T19:25:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:49] "GET /sell?timestamp=2023-03-07T19:25:40Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:52] "GET /buy?timestamp=2023-03-07T19:25:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:54] "GET /sell?timestamp=2023-03-07T19:25:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:57] "GET /buy?timestamp=2023-03-07T19:25:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:25:59] "GET /sell?timestamp=2023-03-07T19:25:50Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:26:02] "GET /buy?timestamp=2023-03-07T19:25:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:26:04] "GET /sell?timestamp=2023-03-07T19:25:55Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:26:07] "GET /buy?timestamp=2023-03-07T19:26:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:26:09] "GET /sell?timestamp=2023-03-07T19:26:00Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:26:12] "GET /buy?timestamp=2023-03-07T19:26:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:26:14] "GET /sell?timestamp=2023-03-07T19:26:05Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:26:17] "GET /buy?timestamp=2023-03-07T19:26:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:26:19] "GET /sell?timestamp=2023-03-07T19:26:10Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:26:22] "GET /buy?timestamp=2023-03-07T19:26:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 19:26:24] "GET /sell?timestamp=2023-03-07T19:26:15Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8090
+ * Running on http://192.168.0.57:8090
+STORAGE :: DEBUG – [33mPress CTRL+C to quit[0m
+STORAGE :: DEBUG – CONSUMER::storing buy event
+STORAGE :: DEBUG – {'type': 'buy', 'datetime': '2023-03-07 18:49:16', 'payload': {'buy_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851', 'buy_qty': 1, 'item_name': 'Item 1', 'item_price': 19.99, 'trace_id': 'd74518cc-1313-4824-b5df-e933a7d583da'}}
+STORAGE :: DEBUG – CONSUMER::storing sell event
+STORAGE :: DEBUG – {'type': 'sell', 'datetime': '2023-03-07 18:49:42', 'payload': {'item_name': 'Item 6', 'item_price': 19.99, 'sell_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851', 'sell_qty': 1, 'trace_id': '0bbbd461-4c29-4bc7-babb-532569f2a72f'}}
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:24] "GET /buy?timestamp=2023-03-07T19:47:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:25] "GET /ui/ HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:25] "GET /ui/swagger-ui.css HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:25] "GET /ui/swagger-ui-bundle.js HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:26] "GET /ui/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:26] "GET /sell?timestamp=2023-03-07T19:47:45Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:26] "GET /openapi.json HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:26] "GET /ui/favicon-32x32.png HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:29] "GET /buy?timestamp=2023-03-07T20:34:22Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:31] "GET /sell?timestamp=2023-03-07T20:34:22Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – Stored buy event: {'buy_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851', 'buy_qty': 1, 'item_name': 'Item 1', 'item_price': 19.99, 'trace_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851'}
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:33] "[35m[1mPOST /buy HTTP/1.1[0m" 201 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:34] "GET /buy?timestamp=2023-03-07T20:34:27Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – Stored buy event: {'buy_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851', 'buy_qty': 1, 'item_name': 'Item 1', 'item_price': 19.99, 'trace_id': 'd290f1ee-6c54-4b01-90e6-d701748f0851'}
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:35] "[35m[1mPOST /buy HTTP/1.1[0m" 201 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:36] "GET /sell?timestamp=2023-03-07T20:34:27Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:39] "GET /buy?timestamp=2023-03-07T20:34:32Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:40] "[35m[1mPOST /sell HTTP/1.1[0m" 201 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:41] "GET /sell?timestamp=2023-03-07T20:34:32Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:42] "[35m[1mPOST /sell HTTP/1.1[0m" 201 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:44] "GET /buy?timestamp=2023-03-07T20:34:37Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:46] "GET /sell?timestamp=2023-03-07T20:34:37Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:49] "GET /buy?timestamp=2023-03-07T20:34:42Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:51] "GET /sell?timestamp=2023-03-07T20:34:42Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:54] "GET /buy?timestamp=2023-03-07T20:34:47Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:55] "GET /buy?timestamp=2001-8-8 HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:56] "GET /sell?timestamp=2023-03-07T20:34:47Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:34:59] "GET /buy?timestamp=2023-03-07T20:34:52Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:35:01] "GET /sell?timestamp=2023-03-07T20:34:52Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:35:04] "GET /buy?timestamp=2023-03-07T20:34:57Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:35:06] "GET /sell?timestamp=2023-03-07T20:34:57Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:35:09] "GET /buy?timestamp=2023-03-07T20:35:02Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:35:11] "GET /sell?timestamp=2003-7-9 HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:35:11] "GET /sell?timestamp=2023-03-07T20:35:02Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:35:14] "GET /buy?timestamp=2023-03-07T20:35:07Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:35:16] "GET /sell?timestamp=2023-03-07T20:35:07Z HTTP/1.1" 200 -
+STORAGE :: DEBUG – 127.0.0.1 - - [07/Mar/2023 20:35:19] "GET /buy?timestamp=2023-03-07T20:35:12Z HTTP/1.1" 200 -

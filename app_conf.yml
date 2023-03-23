@@ -1,0 +1,19 @@
+version: 1
+database:
+  db_type: sqlite
+  url: 'sqlite:///events.sqlite'
+
+
+Kafka:
+  hostname: kafka
+  port: 9092
+  topic: events
+
+
+#events:
+#  hostname: localhost
+#  port: 9092
+#  topic: events
+
+
+

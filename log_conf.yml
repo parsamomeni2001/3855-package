@@ -1,0 +1,27 @@
+version: 1
+formatters:
+  c:
+    format: "\x1b[1;32;20mSTORAGE :: DEBUG \x1b[0m%(message)s"
+  f: 
+    format: "STORAGE :: DEBUG – %(message)s"
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: c
+    stream: ext://sys.stdout
+  file:
+    class: logging.handlers.RotatingFileHandler
+    level: DEBUG
+    formatter: f
+    filename: app.log
+    maxBytes: 10485760  # 10 MB
+    backupCount: 5  # keep up to 5 log files
+loggers:
+  basic:
+    level: DEBUG
+    handlers: [console, file]
+    propagate: no
+root:
+  level: DEBUG
+  handlers: [console, file]
