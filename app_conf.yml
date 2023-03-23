@@ -1,0 +1,9 @@
+#events:
+#  hostname: kafka
+#  port: 9092
+#  topic: events
+
+Kafka:
+  hostname: kafka
+  port: 9092
+  topic: events
