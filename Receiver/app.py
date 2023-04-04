@@ -8,7 +8,7 @@ import pykafka
 from pykafka import KafkaClient
 import requests
 import uuid
-import yaml
+import yaml 
 from flask_cors import CORS
 
 
@@ -18,9 +18,12 @@ def process_event(event, endpoint):
 
     logger.debug(f'Received {endpoint} event with trace id {trace_id}')
 
+    client = KafkaClient(hosts = f"{str(app_config['Kafka']['hostname'])}:{str(app_config['Kafka']['port'])}", socket_timeout_ms = 100000)
+
+
     # TODO: create KafkaClient object assigning hostname and port from app_config to named parameter "hosts"
     # and store it in a variable named 'client'
-    client = KafkaClient(hosts=f"{app_config['Kafka']['hostname']}:{app_config['Kafka']['port']}")
+
 
 
     # TODO: index into the client.topics array using topic from app_config
@@ -70,6 +73,8 @@ def health():
 app = connexion.FlaskApp(__name__, specification_dir='')
 app.add_api("openapi.yml", base_path="/receiver",
  strict_validation=True, validate_responses=True)
+CORS(app.app)
+
 
 with open('app_conf.yml', 'r') as f:
     app_config = yaml.safe_load(f.read())
