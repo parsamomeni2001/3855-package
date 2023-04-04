@@ -23,6 +23,8 @@ from pykafka.common import OffsetType
 
 import threading
 from threading import Thread
+from flask_cors import CORS
+
 
 
 with open('app_conf.yml', 'r') as f:
@@ -168,6 +170,8 @@ def sell(body):
     session.close()
 
     return NoContent, 201
+def health():
+    return "", 200
 # end
 
 def get_sells(timestamp):
@@ -197,6 +201,8 @@ def get_sells(timestamp):
 app = connexion.FlaskApp(__name__, specification_dir='')
 app.add_api("openapi.yml", base_path="/storage",
  strict_validation=True, validate_responses=True)
+CORS(app.app)
+
 
 with open('log_conf.yml', 'r') as f:
     log_config = yaml.safe_load(f.read())
