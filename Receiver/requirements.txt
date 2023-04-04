@@ -2,3 +2,4 @@ connexion
 swagger-ui-bundle
 datetime
 pykafka
+flask-cors
