@@ -8,7 +8,9 @@ import pykafka
 from pykafka import KafkaClient
 import requests
 import uuid
-import yaml 
+import yaml
+from flask_cors import CORS
+
 
 def process_event(event, endpoint):
     trace_id = str(uuid.uuid4())
@@ -62,6 +64,8 @@ def buy(body):
 def sell(body):
     process_event(body, 'sell')
     return NoContent, 201
+def health():
+    return "", 200
 
 app = connexion.FlaskApp(__name__, specification_dir='')
 app.add_api("openapi.yml", base_path="/receiver",
