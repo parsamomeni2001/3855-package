@@ -3,3 +3,4 @@ swagger-ui-bundle
 SQLAlchemy
 mysql-connector-python
 pykafka
+flask-cors
